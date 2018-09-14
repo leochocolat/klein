@@ -1,16 +1,16 @@
-$('.content').click(function(e){
-  setTimeout(function(){
-    window.history.back();
-  },1000);
-
-  let ajax = new TimelineMax();
-
-  ajax.add([
-    TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
-    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
-  ])
-
-});
+// $('.content').click(function(e){
+//   setTimeout(function(){
+//     window.location.href = '../index.html';
+//   },1000);
+//
+//   let ajax = new TimelineMax();
+//
+//   ajax.add([
+//     TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+//     TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+//   ])
+//
+// });
 
 $('body').click(function(e){
 
@@ -25,7 +25,7 @@ $('body').click(function(e){
 $('.block_title').click(function(e){
 
   setTimeout(function(){
-      window.history.back();
+      window.location.href = '../index.html';
     },1000);
 
     let ajax = new TimelineMax();
