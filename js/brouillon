@@ -1,0 +1,35 @@
+// $('.content').click(function(e){
+//   setTimeout(function(){
+//     window.history.back();
+//   },1000);
+//
+//   let ajax = new TimelineMax();
+//
+//   ajax.add([
+//     TweenMax.fromTo( '.paragraphe', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+//   ])
+//
+// });
+//
+// $('body').click(function(e){
+//
+//   let cursorGrow = new TimelineMax();
+//
+//   cursorGrow.add(TweenMax.to(".circle-cursor", .1, {width:"30px", height:"30px", ease: Power2.easeOut}),)
+//             .add(TweenMax.to(".circle-cursor", .2, {width:"20px", height:"20px", ease: Power2.easeOut}),)
+//
+//
+// });
+//
+// $('.about').click(function(e){
+//   setTimeout(function(){
+//     window.history.back();
+//   },1000);
+//
+//   let ajax = new TimelineMax();
+//
+//   ajax.add([
+//     TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+//   ])
+//
+// });
