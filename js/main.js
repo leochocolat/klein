@@ -22,6 +22,22 @@ $('body').click(function(e){
 
 });
 
+$('.block_title').click(function(e){
+
+  setTimeout(function(){
+      window.history.back();
+    },1000);
+
+    let ajax = new TimelineMax();
+
+    ajax.add([
+      TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
+      TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+      TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
+    ])
+
+});
+
 // $('.about').click(function(e){
 //   setTimeout(function(){
 //     window.history.back();
@@ -36,14 +52,20 @@ $('body').click(function(e){
 // });
 
 //LOADER
-// function codeAddress() {
-//   setTimeout(function(){
-//     $(".loader").addClass("blink");
-//     console.log('blink');
-//   }, 1000);
-//
-// }
-// window.onload = codeAddress;
+
+function codeAddress() {
+  setTimeout(function(){
+    $(".loader").addClass("blink");
+    console.log('blink');
+  }, 1000);
+
+  // let ajax = new TimelineMax();
+  //
+  //   ajax.add([
+  //     TweenMax.fromTo( '.title', 1, {autoAlpha:0}, {autoAlpha:.5, ease: Power4.easeInOut}),
+  //   ])
+}
+window.onload = codeAddress;
 
 
 $("body").mousemove(function(e) {
@@ -186,14 +208,15 @@ $('.page-home').click(function(e){
       window.location.href = 'about/index.html';
     },1500);
 
-    $(".page-home").toggleClass("page-change");
+    // $(".page-home").toggleClass("page-change");
 
     renderer.setClearColor(0xffff00);
 
     let ajax = new TimelineMax();
 
     ajax.add([
-      TweenMax.staggerFromTo("#myCanvas", 2, {autoAlpha:1}, {autoAlpha:0, scaleX:5, scaleY:5 , ease: Power4.easeInOut}, 0.1),
+      TweenMax.to("h1", 1, {autoAlpha:0, ease: Power4.easeInOut}),
+      TweenMax.staggerFromTo("#myCanvas", 2, {autoAlpha:1}, {autoAlpha:0, scaleX:5, scaleY:5 , ease: Power4.easeInOut}),
     ])
 
 });
@@ -208,6 +231,7 @@ $('.word1').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 
 
@@ -224,6 +248,7 @@ $('.word2').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 
 });
@@ -238,6 +263,7 @@ $('.word3').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 });
 
@@ -251,6 +277,7 @@ $('.word4').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 
 });
@@ -265,6 +292,7 @@ $('.word5').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 });
 
@@ -278,6 +306,7 @@ $('.word6').click(function(){
   ajax.add([
     TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
     TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+    TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1}, {autoAlpha:0, ease: Power4.easeInOut})
   ])
 });
 
@@ -295,18 +324,21 @@ var controller = new ScrollMagic.Controller();
 // Create scene
 var myScene = new ScrollMagic.Scene({
     triggerElement: ".content",
-    // duration: '100%',
     triggerHook: 0
 })
 .setClassToggle(".paragraphe", "animOn")
-// .setTween(intro)
 .addTo(controller);
 
+var falling = new TimelineMax();
+
+falling.add(TweenMax.to(".falling", 1, {opacity: .6, y:"-60%" , ease: Linear.easeOut}),);
+// .add(TweenMax.to(".falling", 1, {opacity: 0.0, ease: Linear.easeOut}),);
+
+
 var myScene = new ScrollMagic.Scene({
-    triggerElement: ".paragraphe",
-    // duration: '1500%',
-    triggerHook: 0
+    triggerElement: ".section-vide",
+    duration: '1000%',
+    triggerHook: .5
 })
-.setClassToggle(".falling", "animOn")
-// .setTween(intro)
+.setTween(falling)
 .addTo(controller);
