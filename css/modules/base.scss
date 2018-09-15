@@ -1,11 +1,26 @@
 body {
   overflow-x: hidden;
-  // color: black;
-  // // background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  font-family: 'Passion One';
+  background-color: #0000ff;
+  &.landing-page {
+    overflow-y: hidden;
+  }
 }
 
-.elt_title, .elt_title_inherit {
-  // font-size: 50px;
-  // font-family: 'Work Sans';
-  // font-weight: 100;
+.circle-cursor {
+  transform: translate(50%, -50%);
+  z-index: 11;
+  background-color: yellow;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: fixed;
+  left: -50px;
+  top: -50px;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-size: 80px;
+  z-index: 10;
 }

@@ -1,1 +1,50 @@
+.about {
+  overflow-y: hidden;
 
+  #myCanvas {
+    display: none;
+  }
+  .words {
+    display: flex;
+    height: 100vh;
+    h1 {
+      opacity: .4;
+      transition: ease-in-out .5s all;
+    }
+    .list_words {
+      width: 50%;
+      margin: auto;
+
+      & .list {
+        position: relative;
+        font-size: 80px;
+        color: black;
+        opacity: .5;
+        text-transform: uppercase;
+
+        &.left {
+          text-align: left;
+        }
+        &.right {
+          text-align: right;
+        }
+        &.center {
+          text-align: center;
+        }
+
+        & .before {
+          content: '';
+          position: absolute;
+          transform: translateX(-40%);
+          top: 0;
+          left: -100%;
+          width: 200vw;
+          height: 100%;
+          background-image: linear-gradient(90deg, rgba(0,0,255,1) 0%, rgba(0,0,255,1) 40%, rgba(0,0,255,0) 45%, rgba(0,0,255,0) 55%, rgba(0,0,255,1) 60%, rgba(0,0,255,1) 100%);
+          animation: intro2 1s .2s;
+        }
+      }
+
+    }
+
+  }

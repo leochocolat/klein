@@ -2,17 +2,24 @@ $('.content').click(function(e){
   setTimeout(function(){
     window.location.href = '../about/index.html';
   },1000);
+
   let ajax = new TimelineMax();
+
   ajax.add([
     TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
     TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
   ])
+
 });
 
 $('body').click(function(e){
+
   let cursorGrow = new TimelineMax();
+
   cursorGrow.add(TweenMax.to(".circle-cursor", .1, {width:"30px", height:"30px", ease: Power2.easeOut}),)
             .add(TweenMax.to(".circle-cursor", .2, {width:"20px", height:"20px", ease: Power2.easeOut}),)
+
+
 });
 
 $('.block_title').click(function(e){
@@ -22,6 +29,7 @@ $('.block_title').click(function(e){
     },1000);
 
     let ajax = new TimelineMax();
+
     ajax.add([
       TweenMax.to( '.before', 1, {x:0, ease: Power4.easeInOut}),
       TweenMax.fromTo( '.list', 1.5, {autoAlpha:.5, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
@@ -30,28 +38,52 @@ $('.block_title').click(function(e){
 
 });
 
+// $('.about').click(function(e){
+//   setTimeout(function(){
+//     window.history.back();
+//   },1000);
+//
+//   let ajax = new TimelineMax();
+//
+//   ajax.add([
+//     TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
+//   ])
+//
+// });
+
 //LOADER
 
 function codeAddress() {
   setTimeout(function(){
-    // $(".loader").addClass("blink");
-    console.log('Page loaded');
+    $(".loader").addClass("blink");
+    console.log('blink');
   }, 1000);
-}
 
+  // let ajax = new TimelineMax();
+  //
+  //   ajax.add([
+  //     TweenMax.fromTo( '.title', 1, {autoAlpha:0}, {autoAlpha:.5, ease: Power4.easeInOut}),
+  //   ])
+}
 window.onload = codeAddress;
 
 
 $("body").mousemove(function(e) {
 
+  // console.log("mouse move");
+
   let mouseX = e.pageX;
   let mouseY = e.pageY;
+
+
+  // let mouseYCenter = e.pageY - innerHeight/2;
 
   // Name following cursor animation --------------------------------------
   let movingDelay = new TimelineMax();
 
   movingDelay.add([
     TweenMax.fromTo(".circle-cursor", .5, {autoAlpha:1, css:{position:"fixed"}}, {left: mouseX, top: mouseY, ease: Power2.easeOut}, 0.1),
+    TweenMax.fromTo(".text-cursor", 1, {autoAlpha:1, css:{position:"fixed"}}, {left: mouseX, top: mouseY, autoAlpha:0, ease: Power2.easeOut}, 0.5),
   ])
 
 
@@ -158,7 +190,9 @@ $('.word6').mouseleave(function(e){
 $('.word1').mousemove(function(e) {
 
   let mouseXCenter = e.pageX - innerWidth/2;
+
   let gradient = new TimelineMax();
+
   gradient.add([
     TweenMax.to(".word1", .5, {left: mouseXCenter, ease: Power2.easeOut}),
   ])
@@ -280,6 +314,13 @@ $('.word6').click(function(){
 //SCROLLMAGIC CONTENT PAGE
 var controller = new ScrollMagic.Controller();
 
+
+// let intro = new TimelineMax();
+//
+// intro.add([
+//   TweenMax.fromTo('.paragraphe', 1,{autoAlpha:0, y:"100px"} , {autoAlpha:1, y:0, ease: Power4.easeInOut})
+// ])
+
 // Create scene
 var myScene = new ScrollMagic.Scene({
     triggerElement: ".content",
@@ -291,6 +332,8 @@ var myScene = new ScrollMagic.Scene({
 var falling = new TimelineMax();
 
 falling.add(TweenMax.to(".falling", 1, {opacity: .6, y:"-60%" , ease: Linear.easeOut}),);
+// .add(TweenMax.to(".falling", 1, {opacity: 0.0, ease: Linear.easeOut}),);
+
 
 var myScene = new ScrollMagic.Scene({
     triggerElement: ".section-vide",
