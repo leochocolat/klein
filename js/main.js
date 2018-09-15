@@ -1,21 +1,18 @@
 $('.content').click(function(e){
   setTimeout(function(){
-    window.location.href = '../index.html';
+    window.location.href = '../about/index.html';
   },1000);
   let ajax = new TimelineMax();
   ajax.add([
     TweenMax.fromTo( '.text', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
     TweenMax.fromTo( '.block_title', 1.5, {autoAlpha:1, y:0}, {autoAlpha:0, y:"-50px", ease: Power4.easeInOut}),
   ])
-
 });
 
 $('body').click(function(e){
   let cursorGrow = new TimelineMax();
   cursorGrow.add(TweenMax.to(".circle-cursor", .1, {width:"30px", height:"30px", ease: Power2.easeOut}),)
             .add(TweenMax.to(".circle-cursor", .2, {width:"20px", height:"20px", ease: Power2.easeOut}),)
-
-
 });
 
 $('.block_title').click(function(e){
